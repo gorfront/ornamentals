@@ -1,0 +1,33 @@
+.star-rating {
+  background: transparent;
+  button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 20px;
+    .star {
+      background: transparent;
+
+      font-size: 2.5em;
+    }
+  }
+}
+.on {
+  background: transparent;
+
+  color: orange;
+}
+.off {
+  color: #ccc;
+  background: transparent;
+}
+@media screen and (max-width: 480px) {
+  .star-rating {
+    button {
+      .star {
+        font-size: 2em;
+      }
+    }
+  }
+}

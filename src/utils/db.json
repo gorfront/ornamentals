@@ -1,0 +1,368 @@
+{
+  "genders": [
+    {
+      "name": "женский",
+      "id": " 0",
+      "active": true,
+      "activePhoto": "/genders/femaleActive.svg",
+      "passivePhoto": "/genders/femalePassive.svg"
+    },
+    {
+      "name": "мужской",
+      "id": " 1",
+      "active": false,
+      "activePhoto": "/genders/maleActive.svg",
+      "passivePhoto": "/genders/malePassive.svg"
+    }
+  ],
+  "categories": [
+    {
+      "id": " 0",
+      "image": "/categoryPhotos/image3.png",
+      "name": "кольцо",
+      "gender": "female",
+      "active": true
+    },
+    {
+      "id": " 1",
+      "image": "/categoryPhotos/Rectangle619.png",
+      "name": "колье",
+      "gender": "female",
+      "active": false
+    },
+    {
+      "id": " 2",
+      "image": "/categoryPhotos/Rectangle621.png",
+      "name": "серьги",
+      "gender": "female",
+      "active": false
+    },
+    {
+      "id": " 3",
+      "image": "/categoryPhotos/Rectangle623.png",
+      "name": "цепь",
+      "gender": "female",
+      "active": false
+    },
+    {
+      "id": " 4",
+      "image": "/categoryPhotos/Rectangle625.png",
+      "name": "брошь",
+      "gender": "female",
+      "active": false
+    },
+    {
+      "id": " 5",
+      "image": "/categoryPhotos/Rectangle637.png",
+      "name": "кулоны",
+      "gender": "female",
+      "active": false
+    },
+    {
+      "id": " 6",
+      "image": "/categoryPhotos/Rectangle638.png",
+      "name": "браслеты",
+      "gender": "female",
+      "active": false
+    }
+  ],
+  "subcategory": [
+    {
+      "id": " 0",
+      "active": false,
+      "name": "кольцо"
+    },
+    {
+      "id": " 1",
+      "active": false,
+      "name": "обручальные"
+    },
+    {
+      "id": " 2",
+      "active": false,
+      "name": "кольца кастеты"
+    },
+    {
+      "id": " 3",
+      "active": false,
+      "name": "коктейльные"
+    },
+    {
+      "id": " 4",
+      "active": false,
+      "name": "помолвочные"
+    }
+  ],
+  "main": [
+    {
+      "id": "29",
+      "image": "/main/30.png",
+      "name": "a555b",
+      "price": "2500$",
+      "category": ["кольцо", "браслеты"],
+      "active": false,
+      "subcategory": ["кольцо"]
+    },
+    {
+      "id": " 0",
+      "image": "/main/1.png",
+      "name": "a555c",
+      "price": "1250$",
+      "category": ["серьги"],
+      "active": false,
+      "subcategory": ["undefined"]
+    },
+    {
+      "id": " 1",
+      "image": "/main/2.png",
+      "name": "a555d",
+      "price": "1500$",
+      "category": ["браслеты"],
+      "active": false,
+      "subcategory": ["undefined"]
+    },
+    {
+      "id": " 2",
+      "image": "/main/3.png",
+      "name": "a555e",
+      "price": "2000$",
+      "category": ["серьги"],
+      "active": false,
+      "subcategory": ["undefined"]
+    },
+    {
+      "id": " 3",
+      "image": "/main/4.png",
+      "name": "a555f",
+      "price": "2700$",
+      "category": ["серьги"],
+      "active": false,
+      "subcategory": ["undefined"]
+    },
+    {
+      "id": " 4",
+      "image": "/main/5.png",
+      "name": "a555",
+      "price": "1100$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "коктейльные"]
+    },
+    {
+      "id": " 5",
+      "image": "/main/6.png",
+      "name": "a555",
+      "price": "2400$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "коктейльные"]
+    },
+    {
+      "id": " 6",
+      "image": "/main/7.png",
+      "name": "a555",
+      "price": "2500$",
+      "category": ["кольцо", "браслеты"],
+      "active": false,
+      "subcategory": ["кольцо", "коктейльные"]
+    },
+    {
+      "id": " 7",
+      "image": "/main/8.png",
+      "name": "a555",
+      "price": "5000$",
+      "category": ["колье", "цепь"],
+      "active": false,
+      "subcategory": ["undefined"]
+    },
+    {
+      "id": " 8",
+      "image": "/main/9.png",
+      "name": "a555",
+      "price": "5000$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "коктейльные", "помолвочные"]
+    },
+    {
+      "id": " 9",
+      "image": "/main/10.png",
+      "name": "a555",
+      "price": "1300$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "обручальные", "помолвочные"]
+    },
+    {
+      "id": "10",
+      "image": "/main/11.png",
+      "name": "a555",
+      "price": "1000$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "обручальные", "помолвочные", "коктейльные"]
+    },
+    {
+      "id": "11",
+      "image": "/main/12.png",
+      "name": "a555",
+      "price": "2300$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "обручальные", "помолвочные", "коктейльные"]
+    },
+    {
+      "id": "12",
+      "image": "/main/13.png",
+      "name": "a555",
+      "price": "1900$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "обручальные", "помолвочные"]
+    },
+    {
+      "id": "13",
+      "image": "/main/14.png",
+      "name": "a555",
+      "price": "3200$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "обручальные", "помолвочные", "коктейльные"]
+    },
+    {
+      "id": "14",
+      "image": "/main/15.png",
+      "name": "a555",
+      "price": "3740$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "обручальные"]
+    },
+    {
+      "id": "15",
+      "image": "/main/16.png",
+      "name": "a555",
+      "price": "4500$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "помолвочные", "коктейльные"]
+    },
+    {
+      "id": "16",
+      "image": "/main/17.png",
+      "name": "a555",
+      "price": "1900$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "обручальные", "помолвочные"]
+    },
+    {
+      "id": "17",
+      "image": "/main/18.png",
+      "name": "a555",
+      "price": "1980$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "обручальные"]
+    },
+    {
+      "id": "18",
+      "image": "/main/19.png",
+      "name": "a555",
+      "price": "3100$",
+      "category": ["кольцо", "колье", "цепь"],
+      "active": false,
+      "subcategory": ["кольцо", "помолвочные", "обручальные", "коктейльные"]
+    },
+    {
+      "id": "19",
+      "image": "/main/20.png",
+      "name": "a555",
+      "price": "4300$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "помолвочные", "обручальные", "коктейльные"]
+    },
+    {
+      "id": "20",
+      "image": "/main/21.png",
+      "name": "a555",
+      "price": "1600$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "обручальные"]
+    },
+    {
+      "id": "21",
+      "image": "/main/22.png",
+      "name": "a555",
+      "price": "3480$",
+      "category": ["кулоны", "серьги"],
+      "active": false,
+      "subcategory": ["undefined"]
+    },
+    {
+      "id": "22",
+      "image": "/main/23.png",
+      "name": "a555",
+      "price": "2120$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кльцo", "помолвочные", "обручальные", "коктейльные"]
+    },
+    {
+      "id": "23",
+      "image": "/main/24.png",
+      "name": "a555",
+      "price": "2980$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "помолвочные", "обручальные"]
+    },
+    {
+      "id": "24",
+      "image": "/main/25.png",
+      "name": "a555",
+      "price": "1200$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "помолвочные", "обручальные", "коктейльные"]
+    },
+    {
+      "id": "25",
+      "image": "/main/26.png",
+      "name": "a555",
+      "price": "4250$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо", "помолвочные", "коктейльные"]
+    },
+    {
+      "id": "26",
+      "image": "/main/27.png",
+      "name": "a555",
+      "price": "2540$",
+      "category": ["кольцо"],
+      "active": false,
+      "subcategory": ["кольцо"]
+    },
+    {
+      "id": "27",
+      "image": "/main/28.png",
+      "name": "a555",
+      "price": "2230$",
+      "category": ["брошь"],
+      "active": false,
+      "subcategory": ["undefined"]
+    },
+    {
+      "id": "28",
+      "image": "/main/29.png",
+      "name": "a555",
+      "price": "4200$",
+      "category": ["цепь", "кулоны"],
+      "active": false,
+      "subcategory": ["undefined"]
+    }
+  ]
+}

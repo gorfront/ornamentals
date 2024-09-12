@@ -1,0 +1,51 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+
+  background: #ffffff;
+
+  &-div {
+    width: 28%;
+    background: #e8eaeb;
+    border-radius: 25px;
+    padding: 3px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_input {
+      background: transparent;
+      border: none;
+      outline: none;
+      width: 91%;
+      padding: 0 5px;
+      color: #bababa;
+      padding: 5px 8px;
+      height: 32px;
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19.5px;
+        text-align: left;
+      }
+    }
+
+    &_btn {
+      border: none;
+      background: #0008c1;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+
+      &__img {
+        background: transparent;
+      }
+    }
+  }
+}

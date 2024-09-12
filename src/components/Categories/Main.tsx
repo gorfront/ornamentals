@@ -6,7 +6,7 @@ import {
 } from "../../store/slices/categoriesSlice/categoriesSlice";
 import { fetchCategory } from "../../store/slices/categoriesSlice/categoriesAPI";
 
-const Main: React.FC<{ show: string }> = ({ show }) => {
+const Main: React.FC<{ showCategory: string }> = ({ showCategory }) => {
   const categories = useAppSelector(selectCategories);
   const dispatch = useAppDispatch();
 
@@ -31,7 +31,7 @@ const Main: React.FC<{ show: string }> = ({ show }) => {
           onClick={() => {
             toggleActive(el.id);
           }}
-          style={{ zIndex: show === "none" && el.active ? 11 : 0 }}
+          style={{ zIndex: showCategory === "none" && el.active ? 11 : 0 }}
         >
           <img
             src={el.image}

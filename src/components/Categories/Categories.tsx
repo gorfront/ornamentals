@@ -15,7 +15,7 @@ const Categories: React.FC<AddCategory & ShowProps> = ({
     <div className="categoryWithPhoto">
       <Gender />
       <div className="categoryWithPhoto-main">
-        <Main show={show} />
+        <Main showCategory={showCategory} />
       </div>
       <PlusBtn
         {...{ showCategory, setShowCategory, setShow, show }}

@@ -97,272 +97,302 @@
     {
       "id": "29",
       "image": "/main/30.png",
-      "name": "a555b",
+      "name": "a55gtge5b",
       "price": "2500$",
       "category": ["кольцо", "браслеты"],
       "active": false,
-      "subcategory": ["кольцо"]
+      "subcategory": ["кольцо"],
+      "gender": ["женский"]
     },
     {
       "id": " 0",
       "image": "/main/1.png",
-      "name": "a555c",
+      "name": "a53rr3mn55c",
       "price": "1250$",
       "category": ["серьги"],
       "active": false,
-      "subcategory": ["undefined"]
+      "subcategory": ["undefined"],
+      "gender": ["женский"]
     },
     {
       "id": " 1",
       "image": "/main/2.png",
-      "name": "a555d",
+      "name": "a55ljgye5d",
       "price": "1500$",
       "category": ["браслеты"],
       "active": false,
-      "subcategory": ["undefined"]
+      "subcategory": ["undefined"],
+      "gender": ["женский"]
     },
     {
       "id": " 2",
       "image": "/main/3.png",
-      "name": "a555e",
+      "name": "anbe5ff55e",
       "price": "2000$",
       "category": ["серьги"],
       "active": false,
-      "subcategory": ["undefined"]
+      "subcategory": ["undefined"],
+      "gender": ["женский"]
     },
     {
       "id": " 3",
       "image": "/main/4.png",
-      "name": "a555f",
+      "name": "a5ffepowv55f",
       "price": "2700$",
       "category": ["серьги"],
       "active": false,
-      "subcategory": ["undefined"]
+      "subcategory": ["undefined"],
+      "gender": ["женский"]
     },
     {
       "id": " 4",
       "image": "/main/5.png",
-      "name": "a555",
+      "name": "a55eeoovss5",
       "price": "1100$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "коктейльные"]
+      "subcategory": ["кольцо", "коктейльные"],
+      "gender": ["женский"]
     },
     {
       "id": " 5",
       "image": "/main/6.png",
-      "name": "a555",
+      "name": "aryiw555ss",
       "price": "2400$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "коктейльные"]
+      "subcategory": ["кольцо", "коктейльные"],
+      "gender": ["женский"]
     },
     {
       "id": " 6",
       "image": "/main/7.png",
-      "name": "a555",
+      "name": "ggrwa555brg",
       "price": "2500$",
       "category": ["кольцо", "браслеты"],
       "active": false,
-      "subcategory": ["кольцо", "коктейльные"]
+      "subcategory": ["кольцо", "коктейльные"],
+      "gender": ["женский"]
     },
     {
       "id": " 7",
       "image": "/main/8.png",
-      "name": "a555",
+      "name": "a5ffe55kyue",
       "price": "5000$",
       "category": ["колье", "цепь"],
       "active": false,
-      "subcategory": ["undefined"]
+      "subcategory": ["undefined"],
+      "gender": ["женский"]
     },
     {
       "id": " 8",
       "image": "/main/9.png",
-      "name": "a555",
+      "name": "a555wtueew",
       "price": "5000$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "коктейльные", "помолвочные"]
+      "subcategory": ["кольцо", "коктейльные", "помолвочные"],
+      "gender": ["женский"]
     },
     {
       "id": " 9",
       "image": "/main/10.png",
-      "name": "a555",
+      "name": "a5vrws55",
       "price": "1300$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "обручальные", "помолвочные"]
+      "subcategory": ["кольцо", "обручальные", "помолвочные"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "10",
       "image": "/main/11.png",
-      "name": "a555",
+      "name": "aertn555lk",
       "price": "1000$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "обручальные", "помолвочные", "коктейльные"]
+      "subcategory": ["кольцо", "обручальные", "помолвочные", "коктейльные"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "11",
       "image": "/main/12.png",
-      "name": "a555",
+      "name": "a555bnxmjwe",
       "price": "2300$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "обручальные", "помолвочные", "коктейльные"]
+      "subcategory": ["кольцо", "обручальные", "помолвочные", "коктейльные"],
+      "gender": ["женский"]
     },
     {
       "id": "12",
       "image": "/main/13.png",
-      "name": "a555",
+      "name": "a5vb5gro5ll",
       "price": "1900$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "обручальные", "помолвочные"]
+      "subcategory": ["кольцо", "обручальные", "помолвочные"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "13",
       "image": "/main/14.png",
-      "name": "a555",
+      "name": "qwrma555ki",
       "price": "3200$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "обручальные", "помолвочные", "коктейльные"]
+      "subcategory": ["кольцо", "обручальные", "помолвочные", "коктейльные"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "14",
       "image": "/main/15.png",
-      "name": "a555",
+      "name": "bnca55vvd5fdw",
       "price": "3740$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "обручальные"]
+      "subcategory": ["кольцо", "обручальные"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "15",
       "image": "/main/16.png",
-      "name": "a555",
+      "name": "mnsaff5ggw5g5",
       "price": "4500$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "помолвочные", "коктейльные"]
+      "subcategory": ["кольцо", "помолвочные", "коктейльные"],
+      "gender": ["женский"]
     },
     {
       "id": "16",
       "image": "/main/17.png",
-      "name": "a555",
+      "name": "a5nbrhwf55wej",
       "price": "1900$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "обручальные", "помолвочные"]
+      "subcategory": ["кольцо", "обручальные", "помолвочные"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "17",
       "image": "/main/18.png",
-      "name": "a555",
+      "name": "weora555vv",
       "price": "1980$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "обручальные"]
+      "subcategory": ["кольцо", "обручальные"],
+      "gender": ["женский"]
     },
     {
       "id": "18",
       "image": "/main/19.png",
-      "name": "a555",
+      "name": "ajkeo55klk5",
       "price": "3100$",
       "category": ["кольцо", "колье", "цепь"],
       "active": false,
-      "subcategory": ["кольцо", "помолвочные", "обручальные", "коктейльные"]
+      "subcategory": ["кольцо", "помолвочные", "обручальные", "коктейльные"],
+      "gender": ["женский"]
     },
     {
       "id": "19",
       "image": "/main/20.png",
-      "name": "a555",
+      "name": "a5asdl55",
       "price": "4300$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "помолвочные", "обручальные", "коктейльные"]
+      "subcategory": ["кольцо", "помолвочные", "обручальные", "коктейльные"],
+      "gender": ["женский"]
     },
     {
       "id": "20",
       "image": "/main/21.png",
-      "name": "a555",
+      "name": "altiwe55rgf5",
       "price": "1600$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "обручальные"]
+      "subcategory": ["кольцо", "обручальные"],
+      "gender": ["женский"]
     },
     {
       "id": "21",
       "image": "/main/22.png",
-      "name": "a555",
+      "name": "zxioca5gg55",
       "price": "3480$",
       "category": ["кулоны", "серьги"],
       "active": false,
-      "subcategory": ["undefined"]
+      "subcategory": ["undefined"],
+      "gender": ["женский"]
     },
     {
       "id": "22",
       "image": "/main/23.png",
-      "name": "a555",
+      "name": "a555iteh",
       "price": "2120$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кльцo", "помолвочные", "обручальные", "коктейльные"]
+      "subcategory": ["кльцo", "помолвочные", "обручальные", "коктейльные"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "23",
       "image": "/main/24.png",
-      "name": "a555",
+      "name": "a5nbdcuiew55fe",
       "price": "2980$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "помолвочные", "обручальные"]
+      "subcategory": ["кольцо", "помолвочные", "обручальные"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "24",
       "image": "/main/25.png",
-      "name": "a555",
+      "name": "trekav5fgg55",
       "price": "1200$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "помолвочные", "обручальные", "коктейльные"]
+      "subcategory": ["кольцо", "помолвочные", "обручальные", "коктейльные"],
+      "gender": ["женский"]
     },
     {
       "id": "25",
       "image": "/main/26.png",
-      "name": "a555",
+      "name": "a55lerol5gkwr",
       "price": "4250$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо", "помолвочные", "коктейльные"]
+      "subcategory": ["кольцо", "помолвочные", "коктейльные"],
+      "gender": ["женский"]
     },
     {
       "id": "26",
       "image": "/main/27.png",
-      "name": "a555",
+      "name": "oitggagk55grek5",
       "price": "2540$",
       "category": ["кольцо"],
       "active": false,
-      "subcategory": ["кольцо"]
+      "subcategory": ["кольцо"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "27",
       "image": "/main/28.png",
-      "name": "a555",
+      "name": "a5lgijnw55",
       "price": "2230$",
       "category": ["брошь"],
       "active": false,
-      "subcategory": ["undefined"]
+      "subcategory": ["undefined"],
+      "gender": ["женский", "мужской"]
     },
     {
       "id": "28",
       "image": "/main/29.png",
-      "name": "a555",
+      "name": "vlada55gg5",
       "price": "4200$",
       "category": ["цепь", "кулоны"],
       "active": false,
-      "subcategory": ["undefined"]
+      "subcategory": ["undefined"],
+      "gender": ["женский"]
     }
   ]
 }

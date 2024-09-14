@@ -33,8 +33,6 @@ const AddSubcategory: React.FC<ShowProps> = ({ show, setShow }) => {
     setValue("");
   };
 
-  console.log(category);
-
   return (
     <div className="back" ref={ref} style={{ display: show }}>
       <div className="addSubcategory">

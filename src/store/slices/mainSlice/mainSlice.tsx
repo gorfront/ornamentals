@@ -9,6 +9,7 @@ export interface Main {
   category: string[];
   subcategory: string[];
   active: boolean;
+  gender: string[];
 }
 
 const initialState: Main[] = [];

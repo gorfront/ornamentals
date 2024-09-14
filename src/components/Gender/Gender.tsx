@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "../../utils/db.json";
 import "./Gender.scss";
+import { useAppDispatch, useAppSelector } from "../../utils/hooks";
+import {
+  selectGender,
+  toggleActiveGender,
+} from "../../store/slices/genderSlice/genderSlice";
+import { fetchGender } from "../../store/slices/genderSlice/genderAPI";
 
 const Gender = () => {
-  const [genders, setGender] = useState(data.genders);
+  const genders = useAppSelector(selectGender);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGender());
+  }, []);
 
   const toggleActive = (id: string) => {
-    setGender(
-      genders.map((item) =>
-        item.id === id
-          ? { ...item, active: !item.active }
-          : {
-              ...item,
-              active: false,
-            }
-      )
-    );
+    dispatch(toggleActiveGender(id));
   };
 
   return (

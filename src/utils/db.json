@@ -3,7 +3,7 @@
     {
       "name": "женский",
       "id": " 0",
-      "active": true,
+      "active": false,
       "activePhoto": "/genders/femaleActive.svg",
       "passivePhoto": "/genders/femalePassive.svg"
     },
@@ -21,7 +21,7 @@
       "image": "/categoryPhotos/image3.png",
       "name": "кольцо",
       "gender": "female",
-      "active": true
+      "active": false
     },
     {
       "id": " 1",

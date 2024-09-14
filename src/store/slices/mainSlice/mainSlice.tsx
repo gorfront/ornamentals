@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchMain } from "./mainSliceAPI";
 
 export interface Main {
+  gender: any;
   id: string;
   image: string;
   name: string;

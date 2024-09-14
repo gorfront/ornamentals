@@ -1,6 +1,5 @@
 import { useEffect, useMemo } from "react";
 import MainItem from "./MainItem";
-import "./Main.scss";
 import Filter from "../Filter/Filter";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 import { selectMain } from "../../store/slices/mainSlice/mainSlice";
@@ -9,6 +8,7 @@ import { fetchMain } from "../../store/slices/mainSlice/mainSliceAPI";
 import { fetchCategory } from "../../store/slices/categoriesSlice/categoriesAPI";
 import { selectSubCategory } from "../../store/slices/subCategoriesSlice/subCategoriesSlice";
 import { fetchSubCategory } from "../../store/slices/subCategoriesSlice/subCategoriesAPI";
+import "./Main.scss";
 import { selectGender } from "../../store/slices/genderSlice/genderSlice";
 import { fetchGender } from "../../store/slices/genderSlice/genderAPI";
 
@@ -32,6 +32,7 @@ const Main: React.FC<{
   }, [dispatch]);
 
   const filteredProduct = useMemo(() => {
+    // Проверяем, есть ли значение в searchWord
     const initialProducts = main.filter((product) =>
       product.name.toLowerCase().includes(searchWord.toLowerCase())
     );
@@ -49,24 +50,6 @@ const Main: React.FC<{
         .filter((product) => product.subcategory.includes(activeSubcategory));
     }
 
-    if (activeCategory && activeGender) {
-      return initialProducts
-        .filter((product) => product.category.includes(activeCategory))
-        .filter((product) => product.gender.includes(activeGender));
-    }
-
-    if (activeSubcategory && activeGender) {
-      return initialProducts
-        .filter((product) => product.subcategory.includes(activeSubcategory))
-        .filter((product) => product.gender.includes(activeGender));
-    }
-
-    if (activeGender) {
-      return initialProducts.filter((product) =>
-        product.gender.includes(activeGender)
-      );
-    }
-
     if (activeCategory) {
       return initialProducts.filter((product) =>
         product.category.includes(activeCategory)
@@ -76,6 +59,12 @@ const Main: React.FC<{
     if (activeSubcategory) {
       return initialProducts.filter((product) =>
         product.subcategory.includes(activeSubcategory)
+      );
+    }
+
+    if (activeGender) {
+      return initialProducts.filter((product) =>
+        product.gender.includes(activeGender)
       );
     }
 

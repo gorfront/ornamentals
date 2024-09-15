@@ -35,3 +35,5 @@ export const { toggleActiveGender } = genderSlice.actions;
 export const genderReducer = genderSlice.reducer;
 
 export const selectGender = (state: { gender: Gender[] }) => state.gender;
+export { fetchGender };
+

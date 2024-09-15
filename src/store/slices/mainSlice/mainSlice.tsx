@@ -49,3 +49,4 @@ export const { toggleActiveMain, addMain } = mainSlice.actions;
 export const mainReducer = mainSlice.reducer;
 
 export const selectMain = (state: { main: Main[] }) => state.main;
+export { fetchMain };

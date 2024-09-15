@@ -14,10 +14,13 @@ const AddCategory: React.FC<AddCategory> = ({
   setShowCategory,
 }) => {
   const genders = data.genders;
+  const [activeImgId, setActiveImgId] = useState<string | null>(null);
+
   const [category, setCategory] = useState("");
   const [uploadPhoto, setUploadPhoto] = useState<string | null>("");
   const dispatch = useAppDispatch();
   const ref = useRef<HTMLDivElement>(null);
+  const refPhoto = useRef<HTMLDivElement>(null);
 
   const hideHandler = () => {
     if (ref.current) {
@@ -44,6 +47,10 @@ const AddCategory: React.FC<AddCategory> = ({
     }
   };
 
+  const togglePhoto = (id: string) => {
+    setActiveImgId(id);
+  };
+
   return (
     <div className="back" ref={ref} style={{ display: showCategory }}>
       <div className="addCategory">
@@ -55,8 +62,16 @@ const AddCategory: React.FC<AddCategory> = ({
         </header>
         <div className="addCategory--gender">
           {genders.map((el) => (
-            <div key={el.id} className="addCategory--gender__item">
-              <img src={el.activePhoto} alt={el.name} />
+            <div
+              key={el.id}
+              className="addCategory--gender__item"
+              onClick={() => togglePhoto(el.name)}
+            >
+              <img
+                id={el.name}
+                src={activeImgId === el.name ? el.activePhoto : el.passivePhoto}
+                alt={el.name}
+              />
               <p className="addCategory--gender__item__name">{el.name}</p>
             </div>
           ))}

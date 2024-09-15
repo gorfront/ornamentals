@@ -1,7 +1,6 @@
 .main {
   width: calc(100% - 200px);
   margin: 20px auto;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
@@ -15,13 +14,12 @@
     gap: 20px;
     padding: 10px;
     border-radius: 5px;
-    border: none;
     cursor: pointer;
 
     &--img {
       width: 100%;
-
-      & img {
+      background: transparent;
+      img {
         width: 100%;
         height: auto;
         object-fit: cover;
@@ -30,16 +28,11 @@
       }
     }
 
-    &--img,
-    &--about,
-    &--about p {
-      background: transparent;
-    }
-
     &--about {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      background: transparent;
 
       &--name,
       &--price {
@@ -47,11 +40,13 @@
         font-weight: 500;
         line-height: 17.07px;
         text-align: left;
+        background: transparent;
 
         &::first-letter {
           text-transform: uppercase;
         }
       }
+
       &--price {
         font-weight: 600;
       }

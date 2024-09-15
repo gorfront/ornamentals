@@ -8,26 +8,49 @@ import AddTextPart from "./AddTextPart";
 import { useAppDispatch } from "../../utils/hooks";
 import { addMain } from "../../store/slices/mainSlice/mainSlice";
 
-const AddProduct = () => {
-  const [genderName, setGenderName] = useState("");
-  const [categoryName, setCategoryName] = useState("");
-  const [subCategoryName, setSubCategoryName] = useState("");
+interface AddProductProps {
+  showNewProduct: string;
+  setShowNewProduct: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const AddProduct: React.FC<AddProductProps> = ({
+  showNewProduct,
+  setShowNewProduct,
+}) => {
+  const [genderName, setGenderName] = useState<string>("");
+  const [categoryName, setCategoryName] = useState<string>("");
+  const [subCategoryName, setSubCategoryName] = useState<string>("");
   const [photo, setPhoto] = useState<string | undefined>("");
-  const [textPart, setTextPart] = useState([
-    {
-      id: "0",
-      value: "",
-    },
+  const [textPart, setTextPart] = useState<{ id: string; value: string }[]>([
+    { id: "0", value: "" },
     { id: "1", value: "" },
   ]);
   const ref = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
 
-  const submitHandler = (e: { preventDefault: () => void }) => {
+  const toggleProductVisibility = () => {
+    if (ref.current) {
+      ref.current.style.display = showNewProduct ? "none" : "flex";
+    }
+    setShowNewProduct((prev) => (prev === "flex" ? "none" : "flex"));
+  };
+
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (
+      !categoryName ||
+      !subCategoryName ||
+      !genderName ||
+      !textPart[1].value
+    ) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
     dispatch(
       addMain({
-        image: photo?.toString(),
+        image: photo ?? "",
         price: textPart[1].value + "$",
         category: categoryName,
         subcategory: subCategoryName,
@@ -35,7 +58,7 @@ const AddProduct = () => {
       })
     );
 
-    hideHandler();
+    toggleProductVisibility();
     setGenderName("");
     setCategoryName("");
     setSubCategoryName("");
@@ -46,18 +69,15 @@ const AddProduct = () => {
     ]);
   };
 
-  const hideHandler = () => {
-    if (ref.current) {
-      ref.current.style.display = "none";
-    }
-  };
-
   return (
-    <div className="back" ref={ref}>
+    <div className="back" style={{ display: showNewProduct }} ref={ref}>
       <div className="addProduct">
         <header className="addProduct--header">
           <h2 className="addProduct--header__title">добавить изделия</h2>
-          <button className="addProduct--header__btn" onClick={hideHandler}>
+          <button
+            className="addProduct--header__btn"
+            onClick={toggleProductVisibility}
+          >
             <img src="close.svg" alt="close" />
           </button>
         </header>
@@ -75,10 +95,13 @@ const AddProduct = () => {
               <AddTextPart setTextPart={setTextPart} />
             </div>
           </div>
-          <button className="addProduct--btn">добавить</button>
+          <button className="addProduct--btn" type="submit">
+            добавить
+          </button>
         </form>
       </div>
     </div>
   );
 };
+
 export default AddProduct;

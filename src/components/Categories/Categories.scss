@@ -15,17 +15,16 @@
     gap: 30px;
 
     &-item {
-      box-shadow: 0px 0px 10px 0px #00000040;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
       border-radius: 5px;
       padding: 6px 40px;
       background: #ffffff;
       cursor: pointer;
+      transition: all 0.25s ease-in;
 
       &:hover,
       &:active {
-        box-shadow: none;
         border: 2px solid #939393;
-        transition: all 0.25s ease-in;
       }
 
       &_img,

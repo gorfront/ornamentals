@@ -1,19 +1,18 @@
 import { useState } from "react";
+import "./Filter.scss";
 
-const Price = () => {
+const Price: React.FC = () => {
   const [priceRange, setPriceRange] = useState<[number, number]>([500, 2500]);
 
-  const handlePriceChange1 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newRange = [...priceRange];
-    newRange[0] = Number(e.target.value);
-    setPriceRange(newRange as [number, number]);
-  };
-
-  const handlePriceChange2 = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newRange = [...priceRange];
-    newRange[1] = Number(e.target.value);
-    setPriceRange(newRange as [number, number]);
-  };
+  const handlePriceChange =
+    (index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      const newValue = Number(e.target.value);
+      setPriceRange((prevRange) => {
+        const newRange = [...prevRange];
+        newRange[index] = newValue;
+        return newRange as [number, number];
+      });
+    };
 
   return (
     <div className="range-filter">
@@ -22,18 +21,18 @@ const Price = () => {
         <input
           type="range"
           min="0"
-          max="1000"
+          max="5000"
           value={priceRange[0]}
           className="slider"
-          onChange={handlePriceChange1}
+          onChange={handlePriceChange(0)}
         />
         <input
           type="range"
-          min="1001"
+          min={priceRange[0] + 1}
           max="5000"
           value={priceRange[1]}
           className="slider"
-          onChange={handlePriceChange2}
+          onChange={handlePriceChange(1)}
         />
       </div>
       <div className="price-range">
@@ -44,4 +43,5 @@ const Price = () => {
     </div>
   );
 };
+
 export default Price;

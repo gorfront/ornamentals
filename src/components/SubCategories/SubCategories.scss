@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   gap: 15px;
-
   position: relative;
   margin: 50px auto;
 
@@ -13,13 +12,12 @@
     display: flex;
     gap: 10px;
     justify-content: space-around;
-
     width: 100%;
     position: relative;
 
     &::before {
-      position: absolute;
       content: "";
+      position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
@@ -36,18 +34,11 @@
       font-weight: 600;
       line-height: 19.5px;
       cursor: pointer;
-
       width: 16%;
 
-      &--active {
-        &::after {
-          background: #0008c1 !important;
-        }
-      }
-
       &::after {
-        position: absolute;
         content: "";
+        position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
@@ -55,9 +46,11 @@
         border-radius: 5px;
         background: #ffffff;
         box-shadow: 0px 0px 10px 0px #00000040;
-        z-index: 2;
-        border-radius: 5px;
-        transition: all 0.25s ease-in;
+        transition: background 0.25s ease-in;
+      }
+
+      &--active::after {
+        background: #0008c1 !important;
       }
 
       &:hover::after {

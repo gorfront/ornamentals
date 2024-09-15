@@ -26,13 +26,13 @@ const AddCategory: React.FC<{
       {categories.map((category) => (
         <div
           id={category.id}
+          onClick={() => toggleActive(category.id, category.name)}
           key={category.id}
           className={
             activeCategoryId === category.id
-              ? "addProduct--check__category__item addProduct--check__category__item__active"
+              ? "addProduct--check__category__item addProduct--check__category__item--active"
               : "addProduct--check__category__item"
           }
-          onClick={() => toggleActive(category.id, category.name)}
         >
           <img src={category.image} alt={category.name} />
           <p className="addProduct--check__category__item__name">

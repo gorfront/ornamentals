@@ -2,24 +2,32 @@ import { useEffect, useMemo } from "react";
 import MainItem from "./MainItem";
 import Filter from "../Filter/Filter";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks";
-import { selectMain } from "../../store/slices/mainSlice/mainSlice";
-import { selectCategories } from "../../store/slices/categoriesSlice/categoriesSlice";
-import { fetchMain } from "../../store/slices/mainSlice/mainSliceAPI";
-import { fetchCategory } from "../../store/slices/categoriesSlice/categoriesAPI";
-import { selectSubCategory } from "../../store/slices/subCategoriesSlice/subCategoriesSlice";
-import { fetchSubCategory } from "../../store/slices/subCategoriesSlice/subCategoriesAPI";
+import { selectMain, fetchMain } from "../../store/slices/mainSlice/mainSlice";
+import {
+  selectCategories,
+  fetchCategory,
+} from "../../store/slices/categoriesSlice/categoriesSlice";
+import {
+  selectSubCategory,
+  fetchSubCategory,
+} from "../../store/slices/subCategoriesSlice/subCategoriesSlice";
+import {
+  selectGender,
+  fetchGender,
+} from "../../store/slices/genderSlice/genderSlice";
 import "./Main.scss";
-import { selectGender } from "../../store/slices/genderSlice/genderSlice";
-import { fetchGender } from "../../store/slices/genderSlice/genderAPI";
 
-const Main: React.FC<{
+interface MainProps {
   searchWord: string;
-}> = ({ searchWord }) => {
-  const gender = useAppSelector(selectGender);
+}
+
+const Main: React.FC<MainProps> = ({ searchWord }) => {
+  const dispatch = useAppDispatch();
   const main = useAppSelector(selectMain);
   const categories = useAppSelector(selectCategories);
   const subcategories = useAppSelector(selectSubCategory);
-  const dispatch = useAppDispatch();
+  const gender = useAppSelector(selectGender);
+
   const activeCategory = categories.find((el) => el.active)?.name;
   const activeSubcategory = subcategories.find((el) => el.active)?.name;
   const activeGender = gender.find((el) => el.active)?.name;
@@ -31,55 +39,46 @@ const Main: React.FC<{
     dispatch(fetchGender());
   }, [dispatch]);
 
-  const filteredProduct = useMemo(() => {
-    // Проверяем, есть ли значение в searchWord
-    const initialProducts = main.filter((product) =>
-      product.name.toLowerCase().includes(searchWord.toLowerCase())
-    );
+  const filteredProducts = useMemo(() => {
+    const lowercasedSearchWord = searchWord.toLowerCase();
 
-    if (activeCategory && activeSubcategory && activeGender) {
-      return initialProducts
-        .filter((product) => product.category.includes(activeCategory))
-        .filter((product) => product.subcategory.includes(activeSubcategory))
-        .filter((product) => product.gender.includes(activeGender));
-    }
+    return main.filter((product) => {
+      const matchesSearch = product.name
+        .toLowerCase()
+        .includes(lowercasedSearchWord);
+      const matchesCategory = activeCategory
+        ? product.category.includes(activeCategory)
+        : true;
+      const matchesSubcategory = activeSubcategory
+        ? product.subcategory.includes(activeSubcategory)
+        : true;
+      const matchesGender = activeGender
+        ? product.gender.includes(activeGender)
+        : true;
 
-    if (activeCategory && activeSubcategory) {
-      return initialProducts
-        .filter((product) => product.category.includes(activeCategory))
-        .filter((product) => product.subcategory.includes(activeSubcategory));
-    }
-
-    if (activeCategory) {
-      return initialProducts.filter((product) =>
-        product.category.includes(activeCategory)
+      return (
+        matchesSearch && matchesCategory && matchesSubcategory && matchesGender
       );
-    }
-
-    if (activeSubcategory) {
-      return initialProducts.filter((product) =>
-        product.subcategory.includes(activeSubcategory)
-      );
-    }
-
-    if (activeGender) {
-      return initialProducts.filter((product) =>
-        product.gender.includes(activeGender)
-      );
-    }
-
-    return initialProducts;
+    });
   }, [main, searchWord, activeCategory, activeSubcategory, activeGender]);
+
+  const noProductsMessage = `No products found for: ${[
+    activeCategory,
+    activeSubcategory,
+    activeGender,
+  ]
+    .filter(Boolean)
+    .join(" ")}`;
 
   return (
     <>
       <Filter />
       <div className="main">
-        {filteredProduct.length > 0
-          ? filteredProduct.map((el) => <MainItem key={el.id} {...el} />)
-          : `No have products by: ${activeCategory ? activeCategory : ""} ${
-              activeSubcategory ? activeSubcategory : ""
-            } ${activeGender ? activeGender : ""}`}
+        {filteredProducts.length > 0
+          ? filteredProducts.map((product) => (
+              <MainItem key={product.id} {...product} />
+            ))
+          : noProductsMessage}
       </div>
     </>
   );

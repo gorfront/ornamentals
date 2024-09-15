@@ -18,9 +18,18 @@ const HomeWrapper: React.FC<WrapperProps> = ({ searchWord, setSearchWord }) => {
   const [showNewProduct, setShowNewProduct] = useState("none");
   return (
     <>
-      <AddSubcategory {...{ show, setShow }} />
+      <AddSubcategory
+        {...{
+          showCategory,
+          setShowCategory,
+          showNewProduct,
+          setShowNewProduct,
+          show,
+          setShow,
+        }}
+      />
       <AddCategory {...{ showCategory, setShowCategory }} />
-      <AddProduct />
+      <AddProduct {...{ showNewProduct, setShowNewProduct }} />
 
       <Header
         {...{
@@ -34,8 +43,26 @@ const HomeWrapper: React.FC<WrapperProps> = ({ searchWord, setSearchWord }) => {
           setShowNewProduct,
         }}
       />
-      <Categories {...{ showCategory, setShowCategory, show, setShow }} />
-      <SubCategories {...{ showCategory, setShowCategory, show, setShow }} />
+      <Categories
+        {...{
+          showNewProduct,
+          setShowNewProduct,
+          showCategory,
+          setShowCategory,
+          show,
+          setShow,
+        }}
+      />
+      <SubCategories
+        {...{
+          showNewProduct,
+          setShowNewProduct,
+          showCategory,
+          setShowCategory,
+          show,
+          setShow,
+        }}
+      />
       <Outlet />
     </>
   );

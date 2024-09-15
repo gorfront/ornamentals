@@ -10,6 +10,8 @@ const Categories: React.FC<AddCategory & ShowProps> = ({
   setShow,
   showCategory,
   setShowCategory,
+  showNewProduct,
+  setShowNewProduct,
 }) => {
   return (
     <div className="categoryWithPhoto">
@@ -18,7 +20,14 @@ const Categories: React.FC<AddCategory & ShowProps> = ({
         <Main showCategory={showCategory} />
       </div>
       <PlusBtn
-        {...{ showCategory, setShowCategory, setShow, show }}
+        {...{
+          showNewProduct,
+          setShowNewProduct,
+          showCategory,
+          setShowCategory,
+          setShow,
+          show,
+        }}
         type="categories"
       />
     </div>

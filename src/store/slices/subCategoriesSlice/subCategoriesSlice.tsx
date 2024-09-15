@@ -48,3 +48,5 @@ export const subCategoriesReducer = subCategories.reducer;
 
 export const selectSubCategory = (state: { subCategories: SubCategory[] }) =>
   state.subCategories;
+
+export { fetchSubCategory };

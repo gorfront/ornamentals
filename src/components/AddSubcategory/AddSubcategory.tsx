@@ -2,15 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import { selectCategories } from "../../store/slices/categoriesSlice/categoriesSlice";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 import { fetchCategory } from "../../store/slices/categoriesSlice/categoriesAPI";
-import "./AddSubcategory.scss";
 import { addSubCategory } from "../../store/slices/subCategoriesSlice/subCategoriesSlice";
 import { ShowProps } from "../SubCategories/SubCategories";
+import "./AddSubcategory.scss";
 
 const AddSubcategory: React.FC<ShowProps> = ({ show, setShow }) => {
   const [value, setValue] = useState("");
-  const category = useAppSelector(selectCategories).filter((el) => el.active);
+  const categories = useAppSelector(selectCategories).filter((el) => el.active);
   const dispatch = useAppDispatch();
-
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,11 +25,11 @@ const AddSubcategory: React.FC<ShowProps> = ({ show, setShow }) => {
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    if (value.length > 0) {
-      dispatch(addSubCategory({ name: value }));
+    if (value.trim()) {
+      dispatch(addSubCategory({ name: value.trim() }));
+      setValue("");
+      hideHandler();
     }
-    hideHandler();
-    setValue("");
   };
 
   return (
@@ -38,10 +37,16 @@ const AddSubcategory: React.FC<ShowProps> = ({ show, setShow }) => {
       <div className="addSubcategory">
         <header className="addSubcategory--header">
           <h2 className="addSubcategory--header__title">
-            {category[0]?.name} : Добавить Подкатегория
+            {categories.length > 0
+              ? `${categories[0]?.name} : Добавить Подкатегория`
+              : "Добавить Подкатегория"}
           </h2>
-          <button className="addSubcategory--header__btn" onClick={hideHandler}>
-            <img src="close.svg" alt="close" />
+          <button
+            className="addSubcategory--header__btn"
+            onClick={hideHandler}
+            aria-label="Close"
+          >
+            <img src="close.svg" alt="Close" />
           </button>
         </header>
         <form onSubmit={submitHandler} className="addSubcategory--form">
@@ -54,7 +59,9 @@ const AddSubcategory: React.FC<ShowProps> = ({ show, setShow }) => {
             required
           />
           <div className="addSubcategory--line"></div>
-          <button className="addSubcategory--btn">добавить</button>
+          <button type="submit" className="addSubcategory--btn">
+            Добавить
+          </button>
         </form>
       </div>
     </div>

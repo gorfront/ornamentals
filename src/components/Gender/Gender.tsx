@@ -7,33 +7,31 @@ import {
 } from "../../store/slices/genderSlice/genderSlice";
 import { fetchGender } from "../../store/slices/genderSlice/genderAPI";
 
-const Gender = () => {
+const Gender: React.FC = () => {
   const genders = useAppSelector(selectGender);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchGender());
-  }, []);
+  }, [dispatch]);
 
-  const toggleActive = (id: string) => {
+  const handleToggle = (id: string) => {
     dispatch(toggleActiveGender(id));
   };
 
   return (
     <div className="gender">
-      {genders.map((gender) => (
+      {genders.map(({ id, name, active, activePhoto, passivePhoto }) => (
         <button
           className="gender-btn"
-          key={gender.id}
-          onClick={() => toggleActive(gender.id)}
+          key={id}
+          onClick={() => handleToggle(id)}
         >
-          <img
-            src={gender.active ? gender.activePhoto : gender.passivePhoto}
-            alt={gender.name}
-          />
+          <img src={active ? activePhoto : passivePhoto} alt={name} />
         </button>
       ))}
     </div>
   );
 };
+
 export default Gender;

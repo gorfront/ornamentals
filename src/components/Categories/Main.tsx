@@ -12,36 +12,36 @@ const Main: React.FC<{ showCategory: string }> = ({ showCategory }) => {
 
   useEffect(() => {
     dispatch(fetchCategory());
-  }, []);
+  }, [dispatch]);
 
-  const toggleActive = (id: string) => {
+  const handleCategoryClick = (id: string) => {
     dispatch(toggleActiveCategory(id));
   };
 
   return (
     <>
-      {categories.map((el) => (
+      {categories.map((category) => (
         <div
-          key={el.id}
-          className={
-            el.active
-              ? "categoryWithPhoto-main-item categoryWithPhoto-main-item--active"
-              : "categoryWithPhoto-main-item"
-          }
-          onClick={() => {
-            toggleActive(el.id);
+          key={category.id}
+          className={`categoryWithPhoto-main-item ${
+            category.active ? "categoryWithPhoto-main-item--active" : ""
+          }`}
+          onClick={() => handleCategoryClick(category.id)}
+          style={{
+            zIndex: showCategory === "none" && category.active ? 11 : 0,
           }}
-          style={{ zIndex: showCategory === "none" && el.active ? 11 : 0 }}
+          aria-label={category.name}
         >
           <img
-            src={el.image}
-            alt={el.name}
+            src={category.image}
+            alt={category.name}
             className="categoryWithPhoto-main-item_img"
           />
-          <p className="categoryWithPhoto-main-item_name">{el.name}</p>
+          <p className="categoryWithPhoto-main-item_name">{category.name}</p>
         </div>
       ))}
     </>
   );
 };
+
 export default Main;

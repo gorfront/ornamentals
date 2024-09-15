@@ -41,3 +41,5 @@ export const categoryReducer = categoriesSlice.reducer;
 
 export const selectCategories = (state: { categories: Category[] }) =>
   state.categories;
+
+export { fetchCategory };

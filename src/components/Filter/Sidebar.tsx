@@ -4,10 +4,15 @@ import Date from "./Date";
 import Price from "./Price";
 import ProductionPrice from "./ProductionPrice";
 
-const Sidebar: React.FC<{ visible: string }> = ({ visible }) => {
-  const submitHandler = (e: { preventDefault: () => void }) => {
+interface SidebarProps {
+  visible: string;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ visible }) => {
+  const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
   };
+
   return (
     <form
       className="filter-panel"
@@ -15,10 +20,11 @@ const Sidebar: React.FC<{ visible: string }> = ({ visible }) => {
       onSubmit={submitHandler}
     >
       <Date />
-
       <Price />
       <ProductionPrice />
-      <button className="save-btn">Сохранить</button>
+      <button type="submit" className="save-btn">
+        Сохранить
+      </button>
     </form>
   );
 };

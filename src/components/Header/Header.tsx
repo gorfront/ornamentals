@@ -30,12 +30,12 @@ const Header: React.FC<WrapperProps & AddCategory & ShowProps & NewProduct> = ({
           onChange={(e) => setSearchWord(e.target.value)}
         />
         <button className="header-div_btn">
-          <img src="search.svg" alt="serach" className="header-div_btn__img" />
+          <img src="search.svg" alt="Search" className="header-div_btn__img" />
         </button>
       </div>
       <div className="header--add">
         <PlusBtn
-          type={"newProduct"}
+          type="newProduct"
           show={show}
           setShow={setShow}
           showCategory={showCategory}
@@ -47,4 +47,5 @@ const Header: React.FC<WrapperProps & AddCategory & ShowProps & NewProduct> = ({
     </header>
   );
 };
+
 export default Header;

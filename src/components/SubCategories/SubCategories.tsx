@@ -9,48 +9,54 @@ import {
 } from "../../store/slices/subCategoriesSlice/subCategoriesSlice";
 import { fetchSubCategory } from "../../store/slices/subCategoriesSlice/subCategoriesAPI";
 import { AddCategory } from "../AddCategory/AddCategory";
+import { NewProduct } from "../Header/Header";
 
-export interface ShowProps {
+export interface ShowProps extends AddCategory, NewProduct {
   setShow: React.Dispatch<React.SetStateAction<string>>;
   show: string;
 }
 
-const SubCategories: React.FC<ShowProps & AddCategory> = ({
+const SubCategories: React.FC<ShowProps> = ({
   setShow,
   show,
   showCategory,
   setShowCategory,
+  showNewProduct,
+  setShowNewProduct,
 }) => {
   const subCategories = useAppSelector(selectSubCategory);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchSubCategory());
-  }, []);
+  }, [dispatch]);
 
-  const toggleActive = (id: string) => {
+  const handleToggleActive = (id: string) => {
     dispatch(toggleActiveSubCategory(id));
   };
 
   return (
-    <>
-      <div className="subCategories">
-        <ul className="subCategories--list">
-          {subCategories.map((category) => (
-            <SubCategory
-              key={category.id}
-              active={category.active}
-              name={category.name}
-              toggleActive={() => toggleActive(category.id)}
-            />
-          ))}
-        </ul>
-        <PlusBtn
-          {...{ show, setShow, showCategory, setShowCategory }}
-          type="subcategories"
-        />
-      </div>
-    </>
+    <div className="subCategories">
+      <ul className="subCategories--list">
+        {subCategories.map((category) => (
+          <SubCategory
+            key={category.id}
+            active={category.active}
+            name={category.name}
+            toggleActive={() => handleToggleActive(category.id)}
+          />
+        ))}
+      </ul>
+      <PlusBtn
+        show={show}
+        setShow={setShow}
+        showCategory={showCategory}
+        setShowCategory={setShowCategory}
+        showNewProduct={showNewProduct}
+        setShowNewProduct={setShowNewProduct}
+        type="subcategories"
+      />
+    </div>
   );
 };
 

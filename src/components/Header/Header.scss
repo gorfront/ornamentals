@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   padding: 15px;
-
   background: #ffffff;
   position: relative;
 
@@ -13,7 +12,6 @@
     background: #e8eaeb;
     border-radius: 25px;
     padding: 3px 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,9 +21,8 @@
       border: none;
       outline: none;
       width: 91%;
-      padding: 0 5px;
-      color: #bababa;
       padding: 5px 8px;
+      color: #bababa;
       height: 32px;
 
       &::placeholder {

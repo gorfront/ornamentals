@@ -14,27 +14,15 @@ const PlusBtn: React.FC<PlusBtnProps> = ({
   type,
 }) => {
   const handleClick = () => {
-    if (type === "categories") {
-      setShowCategory("flex");
-      setShow("none");
-      setShowNewProduct("none");
-    } else if (type === "subcategories") {
-      setShow("flex");
-      setShowCategory("none");
-      setShowNewProduct("none");
-    } else if (type === "newProduct") {
-      setShowNewProduct("flex");
-      setShowCategory("none");
-      setShow("none");
-    }
+    setShowCategory(type === "categories" ? "flex" : "none");
+    setShow(type === "subcategories" ? "flex" : "none");
+    setShowNewProduct(type === "newProduct" ? "flex" : "none");
   };
 
   return (
-    <>
-      <button className="plus" onClick={handleClick}>
-        <img src="plus.svg" alt="plus" />
-      </button>
-    </>
+    <button className="plus" onClick={handleClick}>
+      <img src="plus.svg" alt="plus" />
+    </button>
   );
 };
 

@@ -5,40 +5,34 @@
   flex-direction: column;
   justify-content: center;
   padding: 30.5px;
-  background: white;
+  background: #ffffff;
   border-radius: 5px;
   gap: 16px;
 
   position: absolute;
   right: 7%;
   top: 40%;
-  transform: translate(0, 0);
 
   &--header {
-    background: transparent;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 3px;
+    background: transparent;
 
     &__title {
-      background: transparent;
-
       font-size: 16px;
       font-weight: 600;
       line-height: 19.5px;
       text-align: left;
-
-      &::first-letter {
-        text-transform: uppercase;
-      }
+      text-transform: uppercase;
+      background: transparent;
     }
 
     &__btn {
       cursor: pointer;
       border: none;
-      outline: none;
       background: transparent;
 
       & img {
@@ -48,30 +42,26 @@
   }
 
   &--form {
-    background: transparent;
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-
-  &--input,
-  &--input::placeholder {
     background: transparent;
-
-    color: #4f4f4f;
-
-    font-family: Roboto;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.41px;
-    text-align: left;
-    color: #4f4f4f;
   }
 
   &--input {
     border: none;
     padding: 4px 4px 4px 0;
     outline: none;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    color: #4f4f4f;
+    background: transparent;
+
+    &::placeholder {
+      color: #4f4f4f;
+    }
   }
 
   &--line {
@@ -85,17 +75,14 @@
     border-radius: 25px;
     border: none;
     background-color: #0008c1;
-    color: white;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 600;
     line-height: 19.5px;
     text-align: center;
     cursor: pointer;
     padding: 7px 0;
-
-    &::first-letter {
-      text-transform: uppercase;
-    }
+    text-transform: uppercase;
   }
 }
 
@@ -104,5 +91,5 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: #25252589;
+  background: rgba(37, 37, 37, 0.54);
 }

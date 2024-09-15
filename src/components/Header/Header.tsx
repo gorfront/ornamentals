@@ -1,8 +1,23 @@
+import { WrapperProps } from "../../wrapper/HomeWrapper";
+import PlusBtn from "../PlusBtn/PlusBtn";
 import "./Header.scss";
+import { AddCategory } from "../AddCategory/AddCategory";
+import { ShowProps } from "../SubCategories/SubCategories";
 
-const Header: React.FC<{ searchWord: string; setSearchWord: any }> = ({
+export interface NewProduct {
+  showNewProduct: string;
+  setShowNewProduct: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Header: React.FC<WrapperProps & AddCategory & ShowProps & NewProduct> = ({
   searchWord,
   setSearchWord,
+  showCategory,
+  setShowCategory,
+  show,
+  setShow,
+  showNewProduct,
+  setShowNewProduct,
 }) => {
   return (
     <header className="header">
@@ -17,6 +32,17 @@ const Header: React.FC<{ searchWord: string; setSearchWord: any }> = ({
         <button className="header-div_btn">
           <img src="search.svg" alt="serach" className="header-div_btn__img" />
         </button>
+      </div>
+      <div className="header--add">
+        <PlusBtn
+          type={"newProduct"}
+          show={show}
+          setShow={setShow}
+          showCategory={showCategory}
+          setShowCategory={setShowCategory}
+          showNewProduct={showNewProduct}
+          setShowNewProduct={setShowNewProduct}
+        />
       </div>
     </header>
   );

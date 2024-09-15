@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import data from "../../utils/db.json";
+import { useEffect } from "react";
 import "./Gender.scss";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 import {

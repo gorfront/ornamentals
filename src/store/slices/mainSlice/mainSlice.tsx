@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchMain } from "./mainSliceAPI";
 
 export interface Main {
-  gender: any;
   id: string;
   image: string;
   name: string;
@@ -26,6 +25,17 @@ const mainSlice = createSlice({
           : { ...item, active: false }
       );
     },
+    addMain: (state, { payload }) => {
+      return [
+        ...state,
+        {
+          ...payload,
+          active: false,
+          id: new Date().getTime().toString(),
+          name: Math.floor(Math.random() * 1000) + "abcdef",
+        },
+      ];
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchMain.fulfilled, (_state, { payload }) => {
@@ -34,7 +44,7 @@ const mainSlice = createSlice({
   },
 });
 
-export const { toggleActiveMain } = mainSlice.actions;
+export const { toggleActiveMain, addMain } = mainSlice.actions;
 
 export const mainReducer = mainSlice.reducer;
 

@@ -1,44 +1,96 @@
-import { useState } from "react";
 import "./Filter.scss";
+import { useAppSelector, useAppDispatch } from "../../utils/hooks";
+import {
+  selectPrice,
+  setProductionPriceFrom,
+  setProductionPriceTo,
+  setRealPriceFrom,
+  setRealPriceTo,
+} from "../../store/slices/priceSlice/priceSlice";
 
-const Price: React.FC = () => {
-  const [priceRange, setPriceRange] = useState<[number, number]>([500, 2500]);
+interface Price {
+  type: "realPrice" | "productionPrice";
+}
+
+const Price: React.FC<Price> = ({ type }) => {
+  const dispatch = useAppDispatch();
+  const allPrice = useAppSelector(selectPrice);
+  const initialValue = allPrice.price;
+  const realPrice = allPrice.realPrice;
+  const productionPrice = allPrice.productionPrice;
 
   const handlePriceChange =
-    (index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
-      const newValue = Number(e.target.value);
-      setPriceRange((prevRange) => {
-        const newRange = [...prevRange];
-        newRange[index] = newValue;
-        return newRange as [number, number];
-      });
+    (id: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = parseInt(e.target.value);
+      switch (id) {
+        case "from":
+          type === "realPrice"
+            ? dispatch(setRealPriceFrom(value))
+            : dispatch(setProductionPriceFrom(value));
+          break;
+        case "to":
+          type === "realPrice"
+            ? dispatch(setRealPriceTo(value))
+            : dispatch(setProductionPriceTo(value));
+          break;
+        default:
+          break;
+      }
     };
+
+  console.log(allPrice);
 
   return (
     <div className="range-filter">
-      <label>Цена</label>
+      <label>{type === "realPrice" ? "Цена" : "Цена производства"}</label>
       <div className="range-container">
         <input
           type="range"
-          min="0"
-          max="5000"
-          value={priceRange[0]}
+          min={initialValue.minFrom}
+          max={initialValue.maxFrom}
+          value={
+            type === "realPrice"
+              ? realPrice.from ?? initialValue.from
+              : productionPrice.from ?? initialValue.from
+          }
           className="slider"
-          onChange={handlePriceChange(0)}
+          onChange={handlePriceChange("from")}
         />
         <input
           type="range"
-          min={priceRange[0] + 1}
-          max="5000"
-          value={priceRange[1]}
+          min={initialValue.minTo}
+          max={initialValue.maxTo}
+          value={
+            type === "realPrice"
+              ? realPrice.to ?? initialValue.to
+              : productionPrice.to ?? initialValue.to
+          }
           className="slider"
-          onChange={handlePriceChange(1)}
+          onChange={handlePriceChange("to")}
         />
       </div>
       <div className="price-range">
-        <input type="number" value={priceRange[0]} readOnly placeholder="От" />
+        <input
+          type="number"
+          value={
+            type === "realPrice"
+              ? realPrice.from ?? initialValue.from
+              : productionPrice.from ?? initialValue.from
+          }
+          readOnly
+          placeholder="От"
+        />
         <span>–</span>
-        <input type="number" value={priceRange[1]} readOnly placeholder="До" />
+        <input
+          type="number"
+          value={
+            type === "realPrice"
+              ? realPrice.to ?? initialValue.to
+              : productionPrice.to ?? initialValue.to
+          }
+          readOnly
+          placeholder="До"
+        />
       </div>
     </div>
   );

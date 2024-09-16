@@ -15,6 +15,7 @@ import {
   selectGender,
   fetchGender,
 } from "../../store/slices/genderSlice/genderSlice";
+import { selectPrice } from "../../store/slices/priceSlice/priceSlice";
 import "./Main.scss";
 
 interface MainProps {
@@ -27,6 +28,7 @@ const Main: React.FC<MainProps> = ({ searchWord }) => {
   const categories = useAppSelector(selectCategories);
   const subcategories = useAppSelector(selectSubCategory);
   const gender = useAppSelector(selectGender);
+  const { realPrice } = useAppSelector(selectPrice);
 
   const activeCategory = categories.find((el) => el.active)?.name;
   const activeSubcategory = subcategories.find((el) => el.active)?.name;
@@ -56,11 +58,30 @@ const Main: React.FC<MainProps> = ({ searchWord }) => {
         ? product.gender.includes(activeGender)
         : true;
 
+      const matchesPrice =
+        (realPrice.from === null ||
+          Number(product.price.substring(0, product.price.length - 1)) >=
+            realPrice.from) &&
+        (realPrice.to === null ||
+          Number(product.price.substring(0, product.price.length - 1)) <=
+            realPrice.to);
+
       return (
-        matchesSearch && matchesCategory && matchesSubcategory && matchesGender
+        matchesSearch &&
+        matchesCategory &&
+        matchesSubcategory &&
+        matchesGender &&
+        matchesPrice
       );
     });
-  }, [main, searchWord, activeCategory, activeSubcategory, activeGender]);
+  }, [
+    main,
+    searchWord,
+    activeCategory,
+    activeSubcategory,
+    activeGender,
+    realPrice,
+  ]);
 
   const noProductsMessage = `No products found for: ${[
     activeCategory,

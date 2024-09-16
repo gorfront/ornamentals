@@ -2,7 +2,6 @@ import React from "react";
 import "./Filter.scss";
 import Date from "./Date";
 import Price from "./Price";
-import ProductionPrice from "./ProductionPrice";
 
 interface SidebarProps {
   visible: string;
@@ -20,8 +19,8 @@ const Sidebar: React.FC<SidebarProps> = ({ visible }) => {
       onSubmit={submitHandler}
     >
       <Date />
-      <Price />
-      <ProductionPrice />
+      <Price type={"realPrice"} />
+      <Price type={"productionPrice"} />
       <button type="submit" className="save-btn">
         Сохранить
       </button>
